@@ -3,7 +3,7 @@
   "version": "3.0.0",
   "description": "Customizable WhatsApp Bot",
   "depecrated": false,
-  "main": "index.js",
+  "main": "adi.js",
   "directories": {
     "lib": "lib",
     "src": "src",
@@ -21,7 +21,7 @@
   ],
   "homepage": "https://github.com/Adi-OfficialL/wabot-adi",
   "author": {
-    "name": "Nurutomo"
+    "name": "M_imam_Adi"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
   },
   "license": "GPL-3.0-or-later",
   "dependencies": {
-    "@adiwajshing/baileys": "^3.5.2",
+    "@adiwajshing/baileys": "github:adiwajshing/baileys",
     "awesome-phonenumber": "^2.54.0",
     "brainly-scraper-v2": "^2.0.4-1",
     "cfonts": "^2.9.3",
