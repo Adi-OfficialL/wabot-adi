@@ -14,10 +14,10 @@ global.APIs = { // API Prefix
 }
 global.APIKeys = { // APIKey Here
   // 'https://website': 'apikey'
-  'https://api.xteam.xyz': os.env["API_KEY"],
+  'https://api.xteam.xyz': 'ISI APIKEY LU',
   'https://recoders-area.caliph.repl.co': 'FreeApi',
   'https://vhtear.com': 'AdiOfficial404',
-  'https://api.zeks.xyz': os.env["API_KEY_ZEKS"]
+  'https://api.zeks.xyz': 'apivinz'
 }
 
 // Sticker WM
