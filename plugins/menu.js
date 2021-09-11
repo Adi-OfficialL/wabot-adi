@@ -152,7 +152,7 @@ let pantek = 'https://i.ibb.co/8z7zqXv/IMG-20210618-WA0001.jpg'
 ├◪ *INFO*
 ││
 │├❒ *Owner Of This Bot*
-│├❒ _http://wa.me/33623746892_
+│├❒ _http://wa.me/6289504585790_
 │├❒ *Official WhatsApp Bot Groups*
 │├❒ *https://bit.ly/Grupgabutbotv1*
 │├❒ *Tap To Join our Telegram Group*
