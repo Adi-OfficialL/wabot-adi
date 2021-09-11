@@ -22,7 +22,7 @@ global.APIKeys = { // APIKey Here
 
 // Sticker WM
 global.packname = 'Sticker Dari Bot Adi'
-global.author = 'No. +48459079404'
+global.author = 'GH: Adi-OfficialL'
 
 global.multiplier = 69 // The higher, The harder levelup
 
