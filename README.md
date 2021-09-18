@@ -5,7 +5,7 @@ Simpel WhatsApp Bot
 ## FOR DEPLOY HEROKU USER
 
 
-<p><a href="https://heroku.com/deploy?template=https://github.com/Adi-OfficialL/wabot-adi"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
+<p><a href="https://heroku.com/deploy?template=https://github.com/rasssya76/wabot-adi/tree/patch-2"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 
 ## FOR TERMUX USER
