@@ -1,9 +1,9 @@
 const os = process
 global.DeveloperMode = 'false' //true Or false
-global.owner = ['33623746892', '6289504585790'] || os.env["OWNER_NUMBER"]// Put your number here
+global.owner = ['62823380980384', '6281515589573'] || os.env["OWNER_NUMBER"]// Put your number here
 global.linkGC = ['http://bit.ly/Grupgabutbotv1']
-global.mods = ['33623746892', '6289504585790'] // Want some help?
-global.prems = ['33623746892', '6289504585790'] // Premium user has unlimited limit
+global.mods = ['62823380980384', '6281515589573'] // Want some help?
+global.prems = ['62823380980384', '6281515589573'] // Premium user has unlimited limit
 global.APIs = { // API Prefix
   // name: 'https://website'
   nrtm: 'https://nurutomo.herokuapp.com',
@@ -21,8 +21,8 @@ global.APIKeys = { // APIKey Here
 }
 
 // Sticker WM
-global.packname = 'Sticker Dari Bot Adi'
-global.author = 'GH: Adi-OfficialL'
+global.packname = 'Sticker Dari R-BoT'
+global.author = 'GH: its Me Rama'
 
 global.multiplier = 69 // The higher, The harder levelup
 
@@ -34,4 +34,4 @@ fs.watchFile(file, () => {
   console.log(chalk.redBright("Update 'config.js'"))
   delete require.cache[file]
   require(file)
-}
+})
