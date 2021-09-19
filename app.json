@@ -8,6 +8,11 @@
     "js-whatsapp"],
   "repository": "https://github.com/Adi-OfficialL/wabot-adi",
   "website": "http://bit.ly/Grupgabutbotv1",
+  "env": {
+    "API_KEY": {
+      "description": "Get the API key here https://api.xteam.xyz",
+      "required": true
+    },
 },
   "buildpacks": [
     {
