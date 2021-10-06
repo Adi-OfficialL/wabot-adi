@@ -5,7 +5,7 @@ let handler = async(m, { conn, text }) => {
    if (!text) return m.reply('_Masukkan Nama Grup!_')
    try{
     await m.reply('Wait Bot Sedang Membuat Group nya')
-    await conn.udpdatePresence(m.chat, Presence.composing)
+    await conn.updatePresence(m.chat, Presence.composing)
     let group = await conn.groupCreate(text, [m.sender])
     let link = await conn.groupInviteCode(group.gid)
     let url = 'https://chat.whatsapp.com/' + link;
