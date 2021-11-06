@@ -10,7 +10,7 @@
     "plugins": "plugins"
   },
   "scripts": {
-    "start": "node adi.js",
+    "start": "pm2-runtime adi.js",
     "test": "node test.js"
   },
   "keywords": [
