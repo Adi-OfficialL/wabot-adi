@@ -8,7 +8,7 @@ Simpel WhatsApp Bot
 <p><a href="https://heroku.com/deploy?template=https://github.com/Adi-OfficialL/wabot-adi"> <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy to Heroku" /></a></p>
 
 
-## FOR DEPLOY RAILWAY
+## FOR DEPLOY RAILWAY USER
 
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2FAdi-OfficialL%2Fwabot-adi)
