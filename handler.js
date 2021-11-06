@@ -2,6 +2,7 @@ let util = require('util')
 let fetch = require('node-fetch')
 let simple = require('./lib/simple')
 let { MessageType } = require('@adiwajshing/baileys')
+let uploadImage = require('./lib/uploadImage')
 let AdiOfficial = 'https://i.ibb.co/8z7zqXv/IMG-20210618-WA0001.jpg'
 
 const isNumber = x => typeof x === 'number' && !isNaN(x)
@@ -436,7 +437,47 @@ ${(global.owner).map((v, i) => 'Owner ' + (i + 1) + ' *: wa.me/' + v + '*').join
     }
   },
  async participantsUpdate({ jid, participants, action }) {
-  const _0x5e591f=_0x439a;function _0x439a(_0x1109e5,_0x37c4e1){const _0x6917c7=_0x6917();return _0x439a=function(_0x439a8a,_0x47d565){_0x439a8a=_0x439a8a-0x1e7;let _0x54521e=_0x6917c7[_0x439a8a];return _0x54521e;},_0x439a(_0x1109e5,_0x37c4e1);}(function(_0x4efe54,_0x4b0050){const _0x40e42f=_0x439a,_0x343d09=_0x4efe54();while(!![]){try{const _0x12efa9=parseInt(_0x40e42f(0x1f0))/0x1*(-parseInt(_0x40e42f(0x1fa))/0x2)+parseInt(_0x40e42f(0x207))/0x3*(-parseInt(_0x40e42f(0x1eb))/0x4)+parseInt(_0x40e42f(0x1f6))/0x5*(-parseInt(_0x40e42f(0x1fb))/0x6)+parseInt(_0x40e42f(0x1ea))/0x7*(-parseInt(_0x40e42f(0x1fd))/0x8)+-parseInt(_0x40e42f(0x1f5))/0x9+-parseInt(_0x40e42f(0x1ef))/0xa+parseInt(_0x40e42f(0x1e9))/0xb;if(_0x12efa9===_0x4b0050)break;else _0x343d09['push'](_0x343d09['shift']());}catch(_0x3caf81){_0x343d09['push'](_0x343d09['shift']());}}}(_0x6917,0x2d72c));let chat=global['DATABASE'][_0x5e591f(0x1fc)][_0x5e591f(0x1ec)][jid]||{},text='';switch(action){case _0x5e591f(0x20b):case _0x5e591f(0x1f1):if(chat['welcome'])for(let user of participants){let pp=_0x5e591f(0x204);try{pp=await this[_0x5e591f(0x1f3)](user);}catch(_0x59bebb){}finally{text=(action===_0x5e591f(0x20b)?(chat[_0x5e591f(0x1f4)]||this[_0x5e591f(0x20a)]||conn['welcome']||_0x5e591f(0x200))[_0x5e591f(0x201)](_0x5e591f(0x20e),this[_0x5e591f(0x1f7)](jid)):chat[_0x5e591f(0x1e7)]||this[_0x5e591f(0x1f9)]||conn[_0x5e591f(0x1f9)]||'Bye,\x20@user!')[_0x5e591f(0x201)](_0x5e591f(0x1ff),'@'+user[_0x5e591f(0x1fe)]('@')[0x0]),this[_0x5e591f(0x208)](jid,pp,'pp.jpg',text,{'key':{'participant':_0x5e591f(0x202),'remoteJid':_0x5e591f(0x202)},'message':{'groupInviteMessage':{'groupJid':'628999999999-1616169743@g.us','inviteCode':'AdiOfficial','groupName':_0x5e591f(0x20c),'caption':'ᴀᴅɪ\x20ᴏғғɪᴄɪᴀʟあ','jpegThumbnail':await(await fetch(AdiOfficial))['buffer']()}}},{'contextInfo':{'mentionedJid':[user]}});}}break;case _0x5e591f(0x206):text=chat[_0x5e591f(0x1f8)]||this[_0x5e591f(0x203)]||conn['spromote']||'@user\x20```is\x20now\x20Admin```';case _0x5e591f(0x1ee):if(!text)text=chat[_0x5e591f(0x1e8)]||this[_0x5e591f(0x205)]||conn[_0x5e591f(0x205)]||_0x5e591f(0x1ed);text=text[_0x5e591f(0x201)](_0x5e591f(0x1ff),'@'+participants[0x0][_0x5e591f(0x1fe)]('@')[0x0]);if(chat['detect'])this[_0x5e591f(0x20d)](jid,text,MessageType[_0x5e591f(0x1f2)],{'contextInfo':{'mentionedJid':this[_0x5e591f(0x209)](text)}});break;}function _0x6917(){const _0x202bc4=['@subject','sBye','sDemote','8864933BEvpjt','7ISnyrg','620zwFnVQ','chats','@user\x20```is\x20no\x20longer\x20Admin```','demote','2023590CmLgLM','133829qgkxJQ','remove','extendedText','getProfilePicture','sWelcome','343242EKYCrk','5dPbduN','getName','sPromote','bye','2TpLwdv','294348svpfQe','_data','871544joOoLC','split','@user','Welcome,\x20@user!','replace','0@s.whatsapp.net','spromote','./src/avatar_contact.png','sdemote','promote','1692xnytne','sendFile','parseMention','welcome','add','AdiOfficial','sendMessage'];_0x6917=function(){return _0x202bc4;};return _0x6917();}
+   let chat = global.DATABASE._data.chats[jid] || {}
+   let text = ''
+   switch (action) {
+     case 'add':
+     case 'remove':
+       if (chat.welcome) {
+          let groupMetadata = await this.groupMetadata(jid)
+          for (let user of participants) {
+            // let pp = './src/avatar_contact.png'
+            let pp = 'https://i.ibb.co/Tq7d7TZ/age-hananta-495-photo.png'
+            try {
+              pp = await uploadImage(await (await fetch(await this.getProfilePicture(user))).buffer())
+            } catch (e) {
+            } finally {
+              text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Selamat datang, @user!').replace('@subject', this.getName(jid)).replace('@desc', groupMetadata.desc) :
+                (chat.sBye || this.bye || conn.bye || 'Sampai jumpa, @user!')).replace(/@user/g, '@' + user.split`@`[0])
+              let wel = `https://kuontol-api.herokuapp.com/api/welcome?nama=${encodeURIComponent(this.getName(user))}&member=${encodeURIComponent(groupMetadata.participants.length)}&gc=${encodeURIComponent(this.getName(jid))}&pp=${pp}&bg=https://cdn.wallpapersafari.com/38/89/pZxtn4.jpg`
+              let lea = `https://kuontol-api.herokuapp.com/api/goodbye?nama=${encodeURIComponent(this.getName(user))}&member=${encodeURIComponent(groupMetadata.participants.length)}&gc=${encodeURIComponent(this.getName(jid))}&pp=${pp}&bg=https://cdn.wallpapersafari.com/38/89/pZxtn4.jpg`
+
+              this.sendFile(jid, action === 'add' ? wel.toBuffer() : lea.toBuffer(), 'pp.jpg', text, null, false, {
+                thumbnail: (action === 'add' ? wel : lea).toBuffer(),
+                contextInfo: {
+                  mentionedJid: [user]
+                }
+              })
+            }
+          }
+        }
+        break
+       case 'promote':
+        text = (chat.sPromote || this.spromote || conn.spromote || '@user ```is now Admin```')
+      case 'demote':
+        if (!text) text = (chat.sDemote || this.sdemote || conn.sdemote || '@user ```is no longer Admin```')
+        text = text.replace('@user', '@' + participants[0].split('@')[0])
+        if (chat.detect) this.sendMessage(jid, text, MessageType.extendedText, {
+          contextInfo: {
+            mentionedJid: this.parseMention(text)
+          }
+        })
+        break
+    }
   },
   async delete(m) {
     if (m.key.fromMe) return
