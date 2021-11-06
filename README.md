@@ -19,7 +19,7 @@ Simpel WhatsApp Bot
 > git clone https://github.com/Adi-OfficialL/wabot-adi
 > cd wabot-adi
 > npm install
-> node adi.js
+> npm start
 ```
 
 ---------
