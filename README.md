@@ -51,7 +51,7 @@ Simpel WhatsApp Bot
 > node . [<session name>] (session name is optional)
 ```
 
-#### Powered By : [`XTEAM`](https://api.xteam.xyz)
+#### Powered By : [`MY REST API`](https://adiofficial-api.herokuapp.com)
 
 #### Author / Creator : [`Nurutomo`](https://GitHub.com/Nurutomo/wabot-aq)
 
