@@ -457,8 +457,9 @@ ${(global.owner).map((v, i) => 'Owner ' + (i + 1) + ' *: wa.me/' + v + '*').join
               let wel = `https://kuontol-api.herokuapp.com/api/welcome?nama=${encodeURIComponent(this.getName(user))}&member=${encodeURIComponent(groupMetadata.participants.length)}&gc=${encodeURIComponent(this.getName(jid))}&pp=${pp}&bg=https://cdn.wallpapersafari.com/38/89/pZxtn4.jpg`
               let lea = `https://kuontol-api.herokuapp.com/api/goodbye?nama=${encodeURIComponent(this.getName(user))}&member=${encodeURIComponent(groupMetadata.participants.length)}&gc=${encodeURIComponent(this.getName(jid))}&pp=${pp}&bg=https://cdn.wallpapersafari.com/38/89/pZxtn4.jpg`
 
-              this.sendFile(jid, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, {
-                thumbnail: getBuffer(action === 'add' ? wel : lea),
+              let buprr = await getBuffer(action === 'add' ? wel : lea)
+	      this.sendFile(jid, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, {
+                thumbnail: buprr,
                 contextInfo: {
                   mentionedJid: [user]
                 }
