@@ -3,6 +3,7 @@ let fetch = require('node-fetch')
 let simple = require('./lib/simple')
 let { MessageType } = require('@adiwajshing/baileys')
 let uploadImage = require('./lib/uploadImage')
+let getBuffer = require('./lib/functions.js')
 let AdiOfficial = 'https://i.ibb.co/8z7zqXv/IMG-20210618-WA0001.jpg'
 
 const isNumber = x => typeof x === 'number' && !isNaN(x)
@@ -456,8 +457,8 @@ ${(global.owner).map((v, i) => 'Owner ' + (i + 1) + ' *: wa.me/' + v + '*').join
               let wel = `https://kuontol-api.herokuapp.com/api/welcome?nama=${encodeURIComponent(this.getName(user))}&member=${encodeURIComponent(groupMetadata.participants.length)}&gc=${encodeURIComponent(this.getName(jid))}&pp=${pp}&bg=https://cdn.wallpapersafari.com/38/89/pZxtn4.jpg`
               let lea = `https://kuontol-api.herokuapp.com/api/goodbye?nama=${encodeURIComponent(this.getName(user))}&member=${encodeURIComponent(groupMetadata.participants.length)}&gc=${encodeURIComponent(this.getName(jid))}&pp=${pp}&bg=https://cdn.wallpapersafari.com/38/89/pZxtn4.jpg`
 
-              this.sendFile(jid, action === 'add' ? wel.toBuffer() : lea.toBuffer(), 'pp.jpg', text, null, false, {
-                thumbnail: (action === 'add' ? wel : lea).toBuffer(),
+              this.sendFile(jid, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, {
+                thumbnail: getBuffer(action === 'add' ? wel : lea),
                 contextInfo: {
                   mentionedJid: [user]
                 }
