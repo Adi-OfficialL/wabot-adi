@@ -457,13 +457,24 @@ ${(global.owner).map((v, i) => 'Owner ' + (i + 1) + ' *: wa.me/' + v + '*').join
               let wel = `https://kuontol-api.herokuapp.com/api/welcome?nama=${encodeURIComponent(this.getName(user))}&member=${encodeURIComponent(groupMetadata.participants.length)}&gc=${encodeURIComponent(this.getName(jid))}&pp=${pp}&bg=https://cdn.wallpapersafari.com/38/89/pZxtn4.jpg`
               let lea = `https://kuontol-api.herokuapp.com/api/goodbye?nama=${encodeURIComponent(this.getName(user))}&member=${encodeURIComponent(groupMetadata.participants.length)}&gc=${encodeURIComponent(this.getName(jid))}&pp=${pp}&bg=https://cdn.wallpapersafari.com/38/89/pZxtn4.jpg`
 
+// NEW Button Welcome & Bye / left
+// by amirul dev
+// recode by the.sad.boy01
+ let buprr = await getBuffer(action === 'add' ? wel : lea)
+ this.sendButtonLoc(jid, pp, text, '© Adi-Official', action === 'add' ? 'WELCOME' : 'GOOD BYE', action == 'add' ? '#' : '!', null, {
+ thumbnail: buprr,
+ contextInfo: {
+ mentionedJid: [user]
+ }
+ })
+ /*
               let buprr = await getBuffer(action === 'add' ? wel : lea)
 	      this.sendFile(jid, action === 'add' ? wel : lea, 'pp.jpg', text, null, false, {
                 thumbnail: buprr,
                 contextInfo: {
                   mentionedJid: [user]
                 }
-              })
+              })*/
             }
           }
         }
