@@ -33,6 +33,7 @@ if (!global.DATABASE.data.users) global.DATABASE.data = {
   msgs: {},
   sticker: {},
 }
+if (!global.DATABASE.data.users) global.DATABASE.data.users = {}
 if (!global.DATABASE.data.chats) global.DATABASE.data.chats = {}
 if (!global.DATABASE.data.stats) global.DATABASE.data.stats = {}
 if (!global.DATABASE.data.stats) global.DATABASE.data.msgs = {}
