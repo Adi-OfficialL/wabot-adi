@@ -3,14 +3,14 @@
   "version": "3.0.0",
   "description": "Customizable WhatsApp Bot",
   "depecrated": false,
-  "main": "adi.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib",
     "src": "src",
     "plugins": "plugins"
   },
   "scripts": {
-    "start": "pm2-runtime adi.js",
+    "start": "node index.js",
     "test": "node test.js"
   },
   "keywords": [
