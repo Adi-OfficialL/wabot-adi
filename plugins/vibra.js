@@ -26,7 +26,7 @@ if (!text) throw 'masukan angka!!, Contoh #vibration 10'
            })
 }
 handler.help = ['vibration (reply audio)']
-handler.tags = ['sound']
+handler.tags = ['audio']
 handler.command = /^(vibration)$/i
 handler.owner = false
 handler.mods = false
