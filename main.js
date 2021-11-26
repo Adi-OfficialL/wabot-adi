@@ -66,6 +66,7 @@ if (opts['test']) {
     name: 'test',
     phone: {}
   }
+  conn.chats
   conn.prepareMessageMedia = (buffer, mediaType, options = {}) => {
     return {
       [mediaType]: {
