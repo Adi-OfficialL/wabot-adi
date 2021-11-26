@@ -10,7 +10,7 @@ let handler  = async (m, { conn, args, usedPrefix, command }) => {
   if ((args[0] && args[0] == 'plz') || global.conn.user.jid == conn.user.jid) {
     let id = global.conns.length
     let conn = new global.conn.constructor()
-    conn.version = global.conn.version
+    conn.version = [2, 2142, 12]
     conn.browserDescription = [ 'wabot-adi', 'EDGE', '94.0.992.50' ]
     if (args[0] && args[0].length > 200) {
       let json = Buffer.from(args[0], 'base64').toString('utf-8')
