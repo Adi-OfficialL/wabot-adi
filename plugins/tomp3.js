@@ -1,28 +1,15 @@
-let { Presence, Mimetype } = require('@adiwajshing/baileys')
-let ffmpeg = require('fluent-ffmpeg');
-let fetch = require('node-fetch');
-let ftype = require('file-type');
-let fs = require('fs');
-let { exec } = require('child_process');
+const { toAudio } = require('../lib/converter')
+const { MessageType } = require('@adiwajshing/baileys')
 
-let handler = async(m, { conn, text }) => {
-
-   await m.reply('Sedang mengonversi...')
-   await conn.updatePresence(m.chat, Presence.composing)
-	  let type = Object.keys(m.message)[0]
-      let isMedia = (type === 'videoMessage')
-      let isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
-      if (!m.quoted) return conn.reply(m.chat, 'Tag Videonya!', m)
-	  if (!isQuotedVideo) return m.reply('Hanya bisa untuk Video!')
-	  let encmedia = JSON.parse(JSON.stringify(m).replace('quotedM', 'm')).message.extendedTextMessage.contextInfo
-	     let media = await conn.downloadAndSaveMediaMessage(encmedia)
-	     let ran = getRandom('.mp4')
-		     exec(`ffmpeg -i ${media} ${ran}`, (err) => {
-					fs.unlinkSync(media)
-					let buffer = fs.readFileSync(ran)
-					conn.sendFile(m.chat, buffer, { mimetype: 'audio/mp4', quoted: m })
-                    fs.unlinkSync(ran)
-                    })
+let handler = async (m, { conn, usedPrefix, command }) => {
+  let q = m.quoted ? m.quoted : m
+  let mime = (m.quoted ? m.quoted : m.msg).mimetype || ''
+  if (!/video|audio/.test(mime)) throw `Balas video atau voice note yang ingin diubah ke mp3 dengan caption *${usedPrefix + command}*`
+  let media = await q.download()
+  let audio = await toAudio(media, 'mp4')
+  conn.sendMessage(m.chat, audio, MessageType.audio, {
+    quoted: m, mimetype: 'audio/mp4'
+  })
 }
 handler.help = ['tomp3 (reply video)']
 handler.tags = ['tools']
