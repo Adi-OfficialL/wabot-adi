@@ -176,15 +176,15 @@ module.exports = {
     
         let chat
         if (chat = global.DATABASE._data.chats[m.chat]) {
-          if (!('isBanned' in chat)) chat.isBanned = false
-          if (!('welcome' in chat)) chat.welcome = false
-          if (!('detect' in chat)) chat.detect = false
-          if (!('sWelcome' in chat)) chat.sWelcome = ''
-          if (!('sBye' in chat)) chat.sBye = ''
-          if (!('sPromote' in chat)) chat.sPromote = ''
-          if (!('sDemote' in chat)) chat.sDemote = ''
-          if (!('delete' in chat)) chat.delete = false
-          if (!('antiLink' in chat)) chat.antiLink = false
+          if (!'isBanned' in chat) chat.isBanned = false
+          if (!'welcome' in chat) chat.welcome = false
+          if (!'detect' in chat) chat.detect = false
+          if (!'sWelcome' in chat) chat.sWelcome = ''
+          if (!'sBye' in chat) chat.sBye = ''
+          if (!'sPromote' in chat) chat.sPromote = ''
+          if (!'sDemote' in chat) chat.sDemote = ''
+          if (!'delete' in chat) chat.delete = false
+          if (!'antiLink' in chat) chat.antiLink = false
         } else global.DATABASE._data.chats[m.chat] = {
           isBanned: false,
           welcome: false,
